@@ -1,0 +1,26 @@
+{
+  "configurations" : [
+    {
+      "id" : "992D9A2C-BEDD-4A38-A919-9E6384734CEC",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "preferredScreenCaptureFormat" : "screenshot",
+    "testTimeoutsEnabled" : true,
+    "uiTestingScreenshotsLifetime" : "keepAlways"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:XcresultSamples.xcodeproj",
+        "identifier" : "00B5BA532E29471200B81F37",
+        "name" : "XcresultSamplesUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

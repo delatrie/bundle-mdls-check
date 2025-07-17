@@ -1,0 +1,40 @@
+{
+  "configurations" : [
+    {
+      "id" : "E9A909F5-3EDF-448E-9C36-392B97B70466",
+      "name" : "Default",
+      "options" : {
+
+      }
+    },
+    {
+      "id" : "3F405607-2B93-4BE7-94DD-92101931F745",
+      "name" : "With screenshots",
+      "options" : {
+        "preferredScreenCaptureFormat" : "screenshot",
+        "uiTestingScreenshotsLifetime" : "keepAlways"
+      }
+    },
+    {
+      "id" : "743CB58B-4F2D-441D-A2A9-BD138392AD24",
+      "name" : "With video",
+      "options" : {
+        "uiTestingScreenshotsLifetime" : "keepAlways"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true,
+    "uiTestingScreenshotsLifetime" : "keepNever"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:XcresultSamples.xcodeproj",
+        "identifier" : "00B5BA532E29471200B81F37",
+        "name" : "XcresultSamplesUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

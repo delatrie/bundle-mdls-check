@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "CD75BDDF-8FF4-4462-AB8C-C646EC17C760",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true,
+    "uiTestingScreenshotsLifetime" : "keepNever"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:XcresultSamples.xcodeproj",
+        "identifier" : "00B5BA392E2946D200B81F37",
+        "name" : "XcresultSamplesSwiftTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:XcresultSamples.xcodeproj",
+        "identifier" : "00B5BA532E29471200B81F37",
+        "name" : "XcresultSamplesUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:XcresultSamples.xcodeproj",
+        "identifier" : "00B5BA462E2946F800B81F37",
+        "name" : "XcresultSamplesXCTests"
+      }
+    }
+  ],
+  "version" : 1
+}

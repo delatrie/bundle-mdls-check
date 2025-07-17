@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "CE22EE3B-5A79-477B-8B78-2B46FE350449",
+      "name" : "Default",
+      "options" : {
+
+      }
+    },
+    {
+      "id" : "BE2BDA67-7EAB-458B-AF59-258311C7CAE8",
+      "name" : "With retries",
+      "options" : {
+        "testRepetitionMode" : "fixedIterations"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true,
+    "uiTestingScreenshotsLifetime" : "keepNever"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:XcresultSamples.xcodeproj",
+        "identifier" : "00B5BA392E2946D200B81F37",
+        "name" : "XcresultSamplesSwiftTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:XcresultSamples.xcodeproj",
+        "identifier" : "00B5BA462E2946F800B81F37",
+        "name" : "XcresultSamplesXCTests"
+      }
+    }
+  ],
+  "version" : 1
+}

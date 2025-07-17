@@ -1,0 +1,14 @@
+{
+  "configurations" : [
+
+  ],
+  "defaultOptions" : {
+    "testRepetitionMode" : "fixedIterations",
+    "testTimeoutsEnabled" : true,
+    "uiTestingScreenshotsLifetime" : "keepNever"
+  },
+  "testTargets" : [
+
+  ],
+  "version" : 1
+}
