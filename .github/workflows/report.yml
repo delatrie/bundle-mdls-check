@@ -1,0 +1,16 @@
+name: Run tests and publish Allure 2 and 3 reports
+run-name: Test and publish by ${{ github.actor }}
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Set Xcode version
+        run: |
+          ls /Applications/Xcode_*.app

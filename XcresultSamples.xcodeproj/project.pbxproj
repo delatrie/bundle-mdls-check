@@ -73,6 +73,11 @@
 			path = XcresultSamplesUITests;
 			sourceTree = "<group>";
 		};
+		00BDFBB82E295BA400FF5F11 /* .github */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = .github;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,7 @@
 		00B5BA1E2E29460300B81F37 = {
 			isa = PBXGroup;
 			children = (
+				00BDFBB82E295BA400FF5F11 /* .github */,
 				00B5BA692E294D1A00B81F37 /* UiTests.xctestplan */,
 				00B5BA672E294CCB00B81F37 /* UnitTests.xctestplan */,
 				00B5BA652E294BB500B81F37 /* AllTests.xctestplan */,
@@ -152,6 +158,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				00B5BA292E29460300B81F37 /* XcresultSamples */,
+				00BDFBB82E295BA400FF5F11 /* .github */,
 			);
 			name = XcresultSamples;
 			packageProductDependencies = (
