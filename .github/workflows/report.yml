@@ -7,10 +7,18 @@ on:
       - 'main'
   workflow_dispatch: {}
 
+env:
+  XCODE_VERSION: "16.2"
+
 jobs:
   test:
     runs-on: macos-latest
     steps:
       - name: Set Xcode version
         run: |
-          ls /Applications/Xcode_*.app
+          sudo xcode-select --switch /Application/Xcode_${{ env.XCODE_VERSION }}.app
+
+      - name: Check Xcode version
+        run: |
+          xcode-select --print-path
+          xcrun xcresulttool version
