@@ -19,3 +19,4 @@ jobs:
         run: |
           xcode-select --print-path
           xcrun xcresulttool version
+          sw_vers
