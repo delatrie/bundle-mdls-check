@@ -14,6 +14,10 @@ jobs:
   test:
     runs-on: macos-15
     steps:
+    
+      - name: Set Xcode ${{ env.XCODE_VERSION }}
+        run: |
+          sudo xcode-select --switch /Applications/Xcode_${{ env.XCODE_VERSION }}.app
 
       - name: Check Xcode version
         run: |
