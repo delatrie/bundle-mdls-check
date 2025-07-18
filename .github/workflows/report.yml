@@ -25,10 +25,6 @@ jobs:
     runs-on: macos-15
     steps:
     
-      - name: Show system info
-        run: |
-          uname -a
-    
       - name: Checkout
         uses: actions/checkout@v4
     
@@ -41,7 +37,7 @@ jobs:
 
       - name: Download xcresults tool
         run: |
-          curl -O https://github.com/eroshenkoam/xcresults/releases/download/${{ env.XCRESULTS_TOOL_VERSION }}/xcresults-arm64
+          curl -LO https://github.com/eroshenkoam/xcresults/releases/download/${{ env.XCRESULTS_TOOL_VERSION }}/xcresults-arm64
           
       - name: Make xcresults executable
         run: |
@@ -58,7 +54,6 @@ jobs:
 
       - name: Convert all.xcresults to allure results
         run: |
-          ./xcresults-arm64 export --help
           ./xcresults-arm64 export --output ./allure-results/all ./output/all.xcresult
           
       - name: Generate Allure 2 for AllTests
