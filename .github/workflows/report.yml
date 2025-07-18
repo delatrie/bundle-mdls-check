@@ -9,18 +9,59 @@ on:
 
 env:
   XCODE_VERSION: "16.4"
+  XCRESULTS_TOOL_VERSION: "1.19.1"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   test:
     runs-on: macos-15
     steps:
     
+      - name: Checkout
+        uses: actions/checkout@v4
+    
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+    
       - name: Set Xcode ${{ env.XCODE_VERSION }}
         run: |
           sudo xcode-select --switch /Applications/Xcode_${{ env.XCODE_VERSION }}.app
 
-      - name: Check Xcode version
+      - name: Download xcresults tool
         run: |
-          xcode-select --print-path
-          xcrun xcresulttool version
-          sw_vers
+          curl -O https://github.com/eroshenkoam/xcresults/releases/download/${{ env.XCRESULTS_TOOL_VERSION }}/xcresults-arm64
+          
+      - name: Make xcresults executable
+        run: |
+          chmod +x ./xcresults-arm64
+
+      - name: Generate bundle for all tests
+        run: |
+          set +e
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac' -testPlan AllTests -resultBundlePath ./output/all.xcresult
+          exit 0
+
+      - name: Convert all.xcresults to allure results
+        run: |
+          ./xcresults-arm64 export --output ./allure-results/all ./output/all.xcresult
+          
+      - name: Generate Allure 2 for AllTests
+        run: |
+          npx allure-commandline generate --output ./allure-reports/all/v2 ./allure-results/all
+  
+      - name: Generate Allure 3 for AllTests
+        run: |
+          npx allure awesome --output ./allure-reports/all/v2 ./output/all.xcresult
+  
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./allure-reports
