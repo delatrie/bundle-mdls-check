@@ -47,10 +47,14 @@ jobs:
         run: |
           set +e
           xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan AllTests -resultBundlePath ./output/all.xcresult
+          ls -l ./output/all.xcresult
+          xcrun xcresulttool get --legacy --format json --path ./output/all.xcresult
+          xcrun xcresulttool get test-results activities --test-id 'XcresultSamplesSwiftTests/example()' --path ./output/all.xcresult
           exit 0
 
       - name: Convert all.xcresults to allure results
         run: |
+          ./xcresults-arm64 export --help
           ./xcresults-arm64 export --output ./allure-results/all ./output/all.xcresult
           
       - name: Generate Allure 2 for AllTests
