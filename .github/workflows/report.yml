@@ -25,6 +25,10 @@ jobs:
     runs-on: macos-15
     steps:
     
+      - name: Show system info
+        run: |
+          uname -a
+    
       - name: Checkout
         uses: actions/checkout@v4
     
