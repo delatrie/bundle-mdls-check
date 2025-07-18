@@ -46,7 +46,7 @@ jobs:
       - name: Generate bundle for all tests
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac' -testPlan AllTests -resultBundlePath ./output/all.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan AllTests -resultBundlePath ./output/all.xcresult
           exit 0
 
       - name: Convert all.xcresults to allure results
@@ -59,7 +59,7 @@ jobs:
   
       - name: Generate Allure 3 for AllTests
         run: |
-          npx allure awesome --output ./allure-reports/all/v2 ./output/all.xcresult
+          npx allure awesome --output ./allure-reports/all/v3 ./output/all.xcresult
   
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
