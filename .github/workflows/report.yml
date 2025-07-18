@@ -60,6 +60,9 @@ jobs:
         run: |
           npx allure-commandline generate --output ./allure-reports/all/v2 ./allure-results/all
   
+      - run: mdls -raw -attr kMDItemContentTypeTree ./output/all.xcresult
+      - run: xcrun xcresulttool version
+  
       - name: Generate Allure 3 for AllTests
         run: |
           npx allure awesome --output ./allure-reports/all/v3 ./output/all.xcresult
