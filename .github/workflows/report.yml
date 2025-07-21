@@ -45,44 +45,44 @@ jobs:
       - name: Run tests against Mac OS
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan AllTests -resultBundlePath ./output/all/mac.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UnitTests -configuration Default -resultBundlePath ./test-results/destinations/mac.xcresult
           exit 0
       
       - name: Run tests against iPhone 16 simulator
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=iPhone 16,OS=18.5' -testPlan AllTests -resultBundlePath ./output/all/iphone16.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=iPhone 16,OS=18.5' -testPlan UnitTests -configuration Default -resultBundlePath ./test-results/destinations/iphone16.xcresult
           exit 0
 
       - name: Run tests with repetitions
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan Repetitions -resultBundlePath ./output/all/repetitions.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UnitTests -configuration Repetitions -resultBundlePath ./test-results/repetitions.xcresult
           exit 0
 
       - name: Run UI tests with screenshot capturing enabled
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration 'With screenshots' -resultBundlePath ./output/ui/screenshots.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration 'With screenshots' -resultBundlePath ./test-results/screenshots.xcresult
           exit 0
 
       - name: Run UI tests with recording enabled
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration 'With video' -resultBundlePath ./output/ui/recording.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration 'With video' -resultBundlePath ./test-results/recordings.xcresult
           exit 0
 
       - name: Merge Mac OS and iPhone 16 destinations
         run: |
-          xcrun xcresulttool merge --output-path ./output/all/merged.xcresult ./output/all/mac.xcresult ./output/all/iphone16.xcresult 
+          xcrun xcresulttool merge --output-path ./test-results/destinations/merged.xcresult ./test-results/destinations/mac.xcresult ./test-results/destinations/iphone16.xcresult 
 
 
       - name: Convert xcresult bundles to allure results
         run: |
-          ./xcresults-arm64 export --output ./allure-results/destinations ./output/all/merged.xcresult
-          ./xcresults-arm64 export --output ./allure-results/repetitions ./output/all/repetitions.xcresult
-          ./xcresults-arm64 export --output ./allure-results/screenshots ./output/ui/screenshots.xcresult
-          ./xcresults-arm64 export --output ./allure-results/recording ./output/ui/recording.xcresult
+          ./xcresults-arm64 export --output ./allure-results/destinations ./test-results/destinations/merged.xcresult
+          ./xcresults-arm64 export --output ./allure-results/repetitions ./test-results/repetitions.xcresult
+          ./xcresults-arm64 export --output ./allure-results/screenshots ./test-results/screenshots.xcresult
+          ./xcresults-arm64 export --output ./allure-results/recordings ./test-results/recordings.xcresult
           
           
       - name: Generate Allure 2 reports
@@ -90,30 +90,30 @@ jobs:
           npx allure-commandline generate --output ./allure-reports/destinations/v2 ./allure-results/destinations
           npx allure-commandline generate --output ./allure-reports/repetitions/v2 ./allure-results/repetitions
           npx allure-commandline generate --output ./allure-reports/screenshots/v2 ./allure-results/screenshots
-          npx allure-commandline generate --output ./allure-reports/recording/v2 ./allure-results/recording
+          npx allure-commandline generate --output ./allure-reports/recordings/v2 ./allure-results/recordings
   
       - run: xcrun xcresulttool version
         
-      - run: xcrun xcresulttool get --legacy --format json --path ./output/all/mac.xcresult
-      - run: xcrun xcresulttool get --legacy --format json --path ./output/all/iphone16.xcresult
-      - run: xcrun xcresulttool get --legacy --format json --path ./output/all/merged.xcresult
-      - run: xcrun xcresulttool get --legacy --format json --path ./output/all/repetitions.xcresult
-      - run: xcrun xcresulttool get --legacy --format json --path ./output/ui/screenshots.xcresult
-      - run: xcrun xcresulttool get --legacy --format json --path ./output/ui/recording.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./test-results/destinations/mac.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./test-results/destinations/iphone16.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./test-results/destinations/merged.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./test-results/repetitions.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./test-results/screenshots.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./test-results/recordings.xcresult
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/mac.xcresult
-      - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/iphone16.xcresult
-      - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/merged.xcresult
-      - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/repetitions.xcresult
-      - run: mdls -raw -attr kMDItemContentTypeTree ./output/ui/screenshots.xcresult
-      - run: mdls -raw -attr kMDItemContentTypeTree ./output/ui/recording.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/iphone16.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/merged.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/repetitions.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/screenshots.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/recordings.xcresult
   
       - name: Generate Allure 3 reports
         run: |
-          npx allure awesome --output ./allure-reports/destinations/v3 ./output/all/merged.xcresult
-          npx allure awesome --output ./allure-reports/repetitions/v3 ./output/all/repetitions.xcresult
-          npx allure awesome --output ./allure-reports/screenshots/v3 ./output/ui/screenshots.xcresult
-          npx allure awesome --output ./allure-reports/recording/v3 ./output/ui/recording.xcresult
+          npx allure awesome --output ./allure-reports/destinations/v3 ./test-results/destinations/merged.xcresult
+          npx allure awesome --output ./allure-reports/repetitions/v3 ./test-results/repetitions.xcresult
+          npx allure awesome --output ./allure-reports/screenshots/v3 ./test-results/screenshots.xcresult
+          npx allure awesome --output ./allure-reports/recordings/v3 ./test-results/recordings.xcresult
   
       - name: Move index.html
         run: cp ./Static/index.html ./allure-reports/

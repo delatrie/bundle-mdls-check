@@ -2,9 +2,17 @@
   "configurations" : [
     {
       "id" : "CD75BDDF-8FF4-4462-AB8C-C646EC17C760",
-      "name" : "Configuration 1",
+      "name" : "Default",
       "options" : {
 
+      }
+    },
+    {
+      "id" : "DA0A4B39-AE94-43CE-AA91-3481FD90E0D3",
+      "name" : "Repetitions",
+      "options" : {
+        "testRepetitionMode" : "fixedIterations",
+        "userAttachmentLifetime" : "keepNever"
       }
     }
   ],

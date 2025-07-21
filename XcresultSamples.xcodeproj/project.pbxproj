@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00278B7F2E2E6E9B00419352 /* Repetitions.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 00278B7E2E2E6E9B00419352 /* Repetitions.xctestplan */; };
 		00B5BA602E294AA300B81F37 /* UnitTestsWithRetries.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 00B5BA5F2E294AA300B81F37 /* UnitTestsWithRetries.xctestplan */; };
 		00B5BA622E294AED00B81F37 /* WithScreenshots.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 00B5BA612E294AED00B81F37 /* WithScreenshots.xctestplan */; };
 		00B5BA642E294B3800B81F37 /* WithVideo.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 00B5BA632E294B3800B81F37 /* WithVideo.xctestplan */; };
@@ -41,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00278B7E2E2E6E9B00419352 /* Repetitions.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Repetitions.xctestplan; sourceTree = "<group>"; };
 		00B5BA272E29460300B81F37 /* XcresultSamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XcresultSamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B5BA3A2E2946D200B81F37 /* XcresultSamplesSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcresultSamplesSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B5BA472E2946F800B81F37 /* XcresultSamplesXCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcresultSamplesXCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				00278B802E2E703E00419352 /* Static */,
-				00278B7E2E2E6E9B00419352 /* Repetitions.xctestplan */,
 				00BDFBB82E295BA400FF5F11 /* .github */,
 				00B5BA692E294D1A00B81F37 /* UiTests.xctestplan */,
 				00B5BA672E294CCB00B81F37 /* UnitTests.xctestplan */,
@@ -304,7 +301,6 @@
 				00B5BA622E294AED00B81F37 /* WithScreenshots.xctestplan in Resources */,
 				00B5BA642E294B3800B81F37 /* WithVideo.xctestplan in Resources */,
 				00B5BA6A2E294D1A00B81F37 /* UiTests.xctestplan in Resources */,
-				00278B7F2E2E6E9B00419352 /* Repetitions.xctestplan in Resources */,
 				00B5BA662E294BB500B81F37 /* AllTests.xctestplan in Resources */,
 				00B5BA682E294CCB00B81F37 /* UnitTests.xctestplan in Resources */,
 			);
