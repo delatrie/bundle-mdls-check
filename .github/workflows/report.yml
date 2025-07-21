@@ -98,14 +98,14 @@ jobs:
       - run: xcrun xcresulttool get --legacy --format json --path ./output/all/mac.xcresult
       - run: xcrun xcresulttool get --legacy --format json --path ./output/all/iphone16.xcresult
       - run: xcrun xcresulttool get --legacy --format json --path ./output/all/merged.xcresult
-      - run: xcrun xcresulttool get --legacy --format json --path ./output/unit/retries.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./output/all/repetitions.xcresult
       - run: xcrun xcresulttool get --legacy --format json --path ./output/ui/screenshots.xcresult
       - run: xcrun xcresulttool get --legacy --format json --path ./output/ui/recording.xcresult
   
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/mac.xcresult
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/iphone16.xcresult
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/merged.xcresult
-      - run: mdls -raw -attr kMDItemContentTypeTree ./output/unit/retries.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/repetitions.xcresult
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/ui/screenshots.xcresult
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/ui/recording.xcresult
   
