@@ -96,7 +96,7 @@ jobs:
       - name: Workaround to bypass first xcresulttool use delay
         run: |
           xcrun xcresulttool version
-          mdls -raw -attr kMDItemContentTypeTree ./output/all.xcresult
+          mdls -raw -attr kMDItemContentTypeTree ./output/all/merged.xcresult
   
       - name: Generate Allure 3 reports
         run: |
