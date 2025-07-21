@@ -94,6 +94,14 @@ jobs:
           npx allure-commandline generate --output ./allure-reports/recording/v2 ./allure-results/recording
   
       - run: xcrun xcresulttool version
+        
+      - run: xcrun xcresulttool get --legacy --format json --path ./output/all/mac.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./output/all/iphone16.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./output/all/merged.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./output/unit/retries.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./output/ui/screenshots.xcresult
+      - run: xcrun xcresulttool get --legacy --format json --path ./output/ui/recording.xcresult
+  
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/mac.xcresult
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/iphone16.xcresult
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/merged.xcresult
