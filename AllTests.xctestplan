@@ -6,14 +6,6 @@
       "options" : {
 
       }
-    },
-    {
-      "id" : "DA0A4B39-AE94-43CE-AA91-3481FD90E0D3",
-      "name" : "Repetitions",
-      "options" : {
-        "testRepetitionMode" : "fixedIterations",
-        "userAttachmentLifetime" : "keepNever"
-      }
     }
   ],
   "defaultOptions" : {

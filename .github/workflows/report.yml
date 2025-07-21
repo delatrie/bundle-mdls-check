@@ -45,31 +45,31 @@ jobs:
       - name: Run tests against Mac OS
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UnitTests -configuration Default -resultBundlePath ./test-results/destinations/mac.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UnitTests -only-test-configuration Default -resultBundlePath ./test-results/destinations/mac.xcresult
           exit 0
       
       - name: Run tests against iPhone 16 simulator
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=iPhone 16,OS=18.5' -testPlan UnitTests -configuration Default -resultBundlePath ./test-results/destinations/iphone16.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=iPhone 16,arch=arm64,OS=18.5' -testPlan UnitTests -only-test-configuration Default -resultBundlePath ./test-results/destinations/iphone16.xcresult
           exit 0
 
       - name: Run tests with repetitions
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UnitTests -configuration Repetitions -resultBundlePath ./test-results/repetitions.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UnitTests -only-test-configuration Repetitions -resultBundlePath ./test-results/repetitions.xcresult
           exit 0
 
       - name: Run UI tests with screenshot capturing enabled
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration Screenshots -resultBundlePath ./test-results/screenshots.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -only-test-configuration Screenshots -resultBundlePath ./test-results/screenshots.xcresult
           exit 0
 
       - name: Run UI tests with recording enabled
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration Recordings -resultBundlePath ./test-results/recordings.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -only-test-configuration Recordings -resultBundlePath ./test-results/recordings.xcresult
           exit 0
 
       - name: Merge Mac OS and iPhone 16 destinations

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00B5BA622E294AED00B81F37 /* WithScreenshots.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 00B5BA612E294AED00B81F37 /* WithScreenshots.xctestplan */; };
-		00B5BA642E294B3800B81F37 /* WithVideo.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 00B5BA632E294B3800B81F37 /* WithVideo.xctestplan */; };
 		00B5BA662E294BB500B81F37 /* AllTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 00B5BA652E294BB500B81F37 /* AllTests.xctestplan */; };
 		00B5BA682E294CCB00B81F37 /* UnitTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 00B5BA672E294CCB00B81F37 /* UnitTests.xctestplan */; };
 		00B5BA6A2E294D1A00B81F37 /* UiTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 00B5BA692E294D1A00B81F37 /* UiTests.xctestplan */; };
@@ -43,8 +41,6 @@
 		00B5BA3A2E2946D200B81F37 /* XcresultSamplesSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcresultSamplesSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B5BA472E2946F800B81F37 /* XcresultSamplesXCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcresultSamplesXCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B5BA542E29471200B81F37 /* XcresultSamplesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcresultSamplesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		00B5BA612E294AED00B81F37 /* WithScreenshots.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WithScreenshots.xctestplan; sourceTree = "<group>"; };
-		00B5BA632E294B3800B81F37 /* WithVideo.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = WithVideo.xctestplan; sourceTree = "<group>"; };
 		00B5BA652E294BB500B81F37 /* AllTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = AllTests.xctestplan; sourceTree = "<group>"; };
 		00B5BA672E294CCB00B81F37 /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTests.xctestplan; sourceTree = "<group>"; };
 		00B5BA692E294D1A00B81F37 /* UiTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UiTests.xctestplan; sourceTree = "<group>"; };
@@ -123,8 +119,6 @@
 				00B5BA692E294D1A00B81F37 /* UiTests.xctestplan */,
 				00B5BA672E294CCB00B81F37 /* UnitTests.xctestplan */,
 				00B5BA652E294BB500B81F37 /* AllTests.xctestplan */,
-				00B5BA632E294B3800B81F37 /* WithVideo.xctestplan */,
-				00B5BA612E294AED00B81F37 /* WithScreenshots.xctestplan */,
 				00B5BA292E29460300B81F37 /* XcresultSamples */,
 				00B5BA3B2E2946D200B81F37 /* XcresultSamplesSwiftTests */,
 				00B5BA482E2946F800B81F37 /* XcresultSamplesXCTests */,
@@ -294,8 +288,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00B5BA622E294AED00B81F37 /* WithScreenshots.xctestplan in Resources */,
-				00B5BA642E294B3800B81F37 /* WithVideo.xctestplan in Resources */,
 				00B5BA6A2E294D1A00B81F37 /* UiTests.xctestplan in Resources */,
 				00B5BA662E294BB500B81F37 /* AllTests.xctestplan in Resources */,
 				00B5BA682E294CCB00B81F37 /* UnitTests.xctestplan in Resources */,
