@@ -98,7 +98,7 @@ jobs:
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/iphone16.xcresult
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/merged.xcresult
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/unit/retries.xcresult
-      - run: mdls -raw -attr kMDItemContentTypeTree ./output/unit/screenshots.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./output/ui/screenshots.xcresult
       - run: mdls -raw -attr kMDItemContentTypeTree ./output/ui/recording.xcresult
   
       - name: Generate Allure 3 reports
