@@ -93,10 +93,13 @@ jobs:
           npx allure-commandline generate --output ./allure-reports/screenshots/v2 ./allure-results/screenshots
           npx allure-commandline generate --output ./allure-reports/recording/v2 ./allure-results/recording
   
-      - name: Workaround to bypass first xcresulttool use delay
-        run: |
-          xcrun xcresulttool version
-          mdls -raw -attr kMDItemContentTypeTree ./output/all/merged.xcresult
+      - run: xcrun xcresulttool version
+      - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/mac.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/iphone16.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./output/all/merged.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./output/unit/retries.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./output/unit/screenshots.xcresult
+      - run: mdls -raw -attr kMDItemContentTypeTree ./output/ui/recording.xcresult
   
       - name: Generate Allure 3 reports
         run: |
