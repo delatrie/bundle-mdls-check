@@ -52,7 +52,7 @@ jobs:
       - name: Generate bundle for iPhone 16, all tests
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=iPhone 16,arch=arm64' -testPlan AllTests -resultBundlePath ./output/all/iphone16.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=iPhone 16,OS=18.5' -testPlan AllTests -resultBundlePath ./output/all/iphone16.xcresult
           exit 0
 
       - name: Generate bundle for Mac OS, unit tests with repetitions
