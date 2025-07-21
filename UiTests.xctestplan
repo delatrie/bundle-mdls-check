@@ -25,7 +25,8 @@
   ],
   "defaultOptions" : {
     "testTimeoutsEnabled" : true,
-    "uiTestingScreenshotsLifetime" : "keepNever"
+    "uiTestingScreenshotsLifetime" : "keepNever",
+    "userAttachmentLifetime" : "keepAlways"
   },
   "testTargets" : [
     {

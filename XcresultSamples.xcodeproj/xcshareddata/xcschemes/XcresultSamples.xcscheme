@@ -39,6 +39,9 @@
          <TestPlanReference
             reference = "container:UiTests.xctestplan">
          </TestPlanReference>
+         <TestPlanReference
+            reference = "container:Repetitions.xctestplan">
+         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference
@@ -181,6 +184,36 @@
                BlueprintIdentifier = "00B5BA532E29471200B81F37"
                BuildableName = "XcresultSamplesUITests.xctest"
                BlueprintName = "XcresultSamplesUITests"
+               ReferencedContainer = "container:XcresultSamples.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00B5BA392E2946D200B81F37"
+               BuildableName = "XcresultSamplesSwiftTests.xctest"
+               BlueprintName = "XcresultSamplesSwiftTests"
+               ReferencedContainer = "container:XcresultSamples.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00B5BA532E29471200B81F37"
+               BuildableName = "XcresultSamplesUITests.xctest"
+               BlueprintName = "XcresultSamplesUITests"
+               ReferencedContainer = "container:XcresultSamples.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00B5BA462E2946F800B81F37"
+               BuildableName = "XcresultSamplesXCTests.xctest"
+               BlueprintName = "XcresultSamplesXCTests"
                ReferencedContainer = "container:XcresultSamples.xcodeproj">
             </BuildableReference>
          </TestableReference>

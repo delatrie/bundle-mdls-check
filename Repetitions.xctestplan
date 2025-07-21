@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "CD75BDDF-8FF4-4462-AB8C-C646EC17C760",
+      "id" : "5B8A60CB-B8E6-4A96-A0DF-56F5DC634B71",
       "name" : "Configuration 1",
       "options" : {
 
@@ -9,9 +9,10 @@
     }
   ],
   "defaultOptions" : {
+    "testRepetitionMode" : "fixedIterations",
     "testTimeoutsEnabled" : true,
     "uiTestingScreenshotsLifetime" : "keepNever",
-    "userAttachmentLifetime" : "keepAlways"
+    "userAttachmentLifetime" : "keepNever"
   },
   "testTargets" : [
     {

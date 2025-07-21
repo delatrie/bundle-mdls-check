@@ -43,31 +43,31 @@ jobs:
         run: |
           chmod +x ./xcresults-arm64
 
-      - name: Generate bundle for Mac OS, all tests
+      - name: Run tests against Mac OS
         run: |
           set +e
           xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan AllTests -resultBundlePath ./output/all/mac.xcresult
           exit 0
       
-      - name: Generate bundle for iPhone 16, all tests
+      - name: Run tests against iPhone 16 simulator
         run: |
           set +e
           xcodebuild test -scheme XcresultSamples -destination 'name=iPhone 16,OS=18.5' -testPlan AllTests -resultBundlePath ./output/all/iphone16.xcresult
           exit 0
 
-      - name: Generate bundle for Mac OS, unit tests with repetitions
+      - name: Run tests with repetitions
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UnitTests -configuration 'With retries' -resultBundlePath ./output/unit/retries.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan Repetitions -resultBundlePath ./output/all/repetitions.xcresult
           exit 0
 
-      - name: Generate bundle for Mac OS, UI tests, with screenshots
+      - name: Run UI tests with screenshot capturing enabled
         run: |
           set +e
           xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration 'With screenshots' -resultBundlePath ./output/ui/screenshots.xcresult
           exit 0
 
-      - name: Generate bundle for Mac OS, UI tests, with recording
+      - name: Run UI tests with recording enabled
         run: |
           set +e
           xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration 'With video' -resultBundlePath ./output/ui/recording.xcresult
@@ -81,7 +81,7 @@ jobs:
       - name: Convert xcresult bundles to allure results
         run: |
           ./xcresults-arm64 export --output ./allure-results/destinations ./output/all/merged.xcresult
-          ./xcresults-arm64 export --output ./allure-results/retries ./output/unit/retries.xcresult
+          ./xcresults-arm64 export --output ./allure-results/repetitions ./output/all/repetitions.xcresult
           ./xcresults-arm64 export --output ./allure-results/screenshots ./output/ui/screenshots.xcresult
           ./xcresults-arm64 export --output ./allure-results/recording ./output/ui/recording.xcresult
           
@@ -89,7 +89,7 @@ jobs:
       - name: Generate Allure 2 reports
         run: |
           npx allure-commandline generate --output ./allure-reports/destinations/v2 ./allure-results/destinations
-          npx allure-commandline generate --output ./allure-reports/retries/v2 ./allure-results/retries
+          npx allure-commandline generate --output ./allure-reports/repetitions/v2 ./allure-results/repetitions
           npx allure-commandline generate --output ./allure-reports/screenshots/v2 ./allure-results/screenshots
           npx allure-commandline generate --output ./allure-reports/recording/v2 ./allure-results/recording
   
@@ -112,9 +112,12 @@ jobs:
       - name: Generate Allure 3 reports
         run: |
           npx allure awesome --output ./allure-reports/destinations/v3 ./output/all/merged.xcresult
-          npx allure awesome --output ./allure-reports/retries/v3 ./output/unit/retries.xcresult
+          npx allure awesome --output ./allure-reports/repetitions/v3 ./output/all/repetitions.xcresult
           npx allure awesome --output ./allure-reports/screenshots/v3 ./output/ui/screenshots.xcresult
           npx allure awesome --output ./allure-reports/recording/v3 ./output/ui/recording.xcresult
+  
+      - name: Move index.html
+        run: cp ./Static/index.html ./allure-reports/
   
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
