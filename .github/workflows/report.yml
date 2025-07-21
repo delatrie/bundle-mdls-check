@@ -20,7 +20,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  test:
+  update-reports:
     runs-on: macos-15
     steps:
     
