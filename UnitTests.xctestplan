@@ -9,7 +9,7 @@
     },
     {
       "id" : "BE2BDA67-7EAB-458B-AF59-258311C7CAE8",
-      "name" : "With retries",
+      "name" : "Repetitions",
       "options" : {
         "testRepetitionMode" : "fixedIterations"
       }

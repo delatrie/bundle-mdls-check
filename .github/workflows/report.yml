@@ -63,13 +63,13 @@ jobs:
       - name: Run UI tests with screenshot capturing enabled
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration 'With screenshots' -resultBundlePath ./test-results/screenshots.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration Screenshots -resultBundlePath ./test-results/screenshots.xcresult
           exit 0
 
       - name: Run UI tests with recording enabled
         run: |
           set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration 'With video' -resultBundlePath ./test-results/recordings.xcresult
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UiTests -configuration Recordings -resultBundlePath ./test-results/recordings.xcresult
           exit 0
 
       - name: Merge Mac OS and iPhone 16 destinations
@@ -91,6 +91,8 @@ jobs:
           npx allure-commandline generate --output ./allure-reports/repetitions/v2 ./allure-results/repetitions
           npx allure-commandline generate --output ./allure-reports/screenshots/v2 ./allure-results/screenshots
           npx allure-commandline generate --output ./allure-reports/recordings/v2 ./allure-results/recordings
+  
+      - run: sleep 10s
   
       - run: xcrun xcresulttool version
         

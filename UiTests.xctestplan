@@ -9,7 +9,7 @@
     },
     {
       "id" : "3F405607-2B93-4BE7-94DD-92101931F745",
-      "name" : "With screenshots",
+      "name" : "Screenshots",
       "options" : {
         "preferredScreenCaptureFormat" : "screenshot",
         "uiTestingScreenshotsLifetime" : "keepAlways"
@@ -17,7 +17,7 @@
     },
     {
       "id" : "743CB58B-4F2D-441D-A2A9-BD138392AD24",
-      "name" : "With video",
+      "name" : "Recordings",
       "options" : {
         "uiTestingScreenshotsLifetime" : "keepAlways"
       }
