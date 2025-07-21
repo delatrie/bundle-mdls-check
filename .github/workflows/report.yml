@@ -75,7 +75,7 @@ jobs:
 
       - name: Merge Mac OS and iPhone 16 destinations
         run: |
-          xcrun xcresulttool --output-path ./output/all/merged.xcresult ./output/all/mac.xcresult ./output/all/iphone16.xcresult 
+          xcrun xcresulttool merge --output-path ./output/all/merged.xcresult ./output/all/mac.xcresult ./output/all/iphone16.xcresult 
 
 
       - name: Convert xcresult bundles to allure results
