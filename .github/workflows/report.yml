@@ -1,5 +1,4 @@
 name: Run tests and publish Allure 2 and 3 reports
-run-name: Test and publish by ${{ github.actor }}
 
 on:
   push:
