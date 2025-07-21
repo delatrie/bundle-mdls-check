@@ -356,16 +356,28 @@
 /* Begin PBXTargetDependency section */
 		00B5BA3F2E2946D200B81F37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				macos,
+			);
 			target = 00B5BA262E29460300B81F37 /* XcresultSamples */;
 			targetProxy = 00B5BA3E2E2946D200B81F37 /* PBXContainerItemProxy */;
 		};
 		00B5BA4C2E2946F800B81F37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				macos,
+			);
 			target = 00B5BA262E29460300B81F37 /* XcresultSamples */;
 			targetProxy = 00B5BA4B2E2946F800B81F37 /* PBXContainerItemProxy */;
 		};
 		00B5BA5B2E29471200B81F37 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+				macos,
+			);
 			target = 00B5BA262E29460300B81F37 /* XcresultSamples */;
 			targetProxy = 00B5BA5A2E29471200B81F37 /* PBXContainerItemProxy */;
 		};
@@ -572,8 +584,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.qameta.XcresultSamplesSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XcresultSamples.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XcresultSamples";
 			};
 			name = Debug;
@@ -590,8 +605,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.qameta.XcresultSamplesSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XcresultSamples.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XcresultSamples";
 			};
 			name = Release;
@@ -608,8 +626,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.qameta.XcresultSamplesXCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XcresultSamples.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XcresultSamples";
 			};
 			name = Debug;
@@ -626,8 +647,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.qameta.XcresultSamplesXCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XcresultSamples.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/XcresultSamples";
 			};
 			name = Release;
@@ -643,8 +667,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.qameta.XcresultSamplesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = XcresultSamples;
 			};
 			name = Debug;
@@ -660,8 +687,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.qameta.XcresultSamplesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = XcresultSamples;
 			};
 			name = Release;
