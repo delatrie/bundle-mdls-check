@@ -95,6 +95,7 @@ jobs:
 
       - name: Convert xcresult bundles to allure results
         run: |
+          ./xcresults-arm64 export --output ./allure-results/unit ./test-results/destinations/mac.xcresult
           ./xcresults-arm64 export --output ./allure-results/destinations ./test-results/destinations/merged.xcresult
           ./xcresults-arm64 export --output ./allure-results/repetitions ./test-results/repetitions.xcresult
           ./xcresults-arm64 export --output ./allure-results/testplans ./test-results/testplans.xcresult
@@ -105,6 +106,7 @@ jobs:
           
       - name: Generate Allure 2 reports
         run: |
+          npx allure-commandline generate --output ./allure-reports/unit/v2 ./allure-results/unit
           npx allure-commandline generate --output ./allure-reports/destinations/v2 ./allure-results/destinations
           npx allure-commandline generate --output ./allure-reports/repetitions/v2 ./allure-results/repetitions
           npx allure-commandline generate --output ./allure-reports/testplans/v2 ./allure-results/testplans
@@ -136,6 +138,7 @@ jobs:
   
       - name: Generate Allure 3 reports
         run: |
+          npx allure awesome --output ./allure-reports/unit/v3 ./test-results/destinations/mac.xcresult
           npx allure awesome --output ./allure-reports/destinations/v3 ./test-results/destinations/merged.xcresult
           npx allure awesome --output ./allure-reports/repetitions/v3 ./test-results/repetitions.xcresult
           npx allure awesome --output ./allure-reports/testplans/v3 ./test-results/testplans.xcresult
