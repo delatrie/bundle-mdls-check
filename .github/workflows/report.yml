@@ -46,4 +46,6 @@ jobs:
       - run: sleep 10s
   
       - run: mdls ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations
+      - run: mdls ./test-results
 
