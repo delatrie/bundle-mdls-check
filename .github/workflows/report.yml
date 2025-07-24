@@ -23,29 +23,7 @@ jobs:
   update-reports:
     runs-on: macos-15
     steps:
-    
-      - name: Checkout
-        uses: actions/checkout@v4
-    
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-    
-      - name: Set Xcode ${{ env.XCODE_VERSION }}
-        run: |
-          sudo xcode-select --switch /Applications/Xcode_${{ env.XCODE_VERSION }}.app
-
-      - name: Run tests against Mac OS
-        run: |
-          set +e
-          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UnitTests -only-test-configuration Default -resultBundlePath ./test-results/destinations/mac.xcresult
-          exit 0
-
-      - run: mdutil -t ./test-results/destinations/mac.xcresult
+      - run: mdutil -t .
       - run: mdutil -as
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-      - run: mdls ./test-results/destinations
-      - run: mdls ./test-results
+      - run: mdls .
 
