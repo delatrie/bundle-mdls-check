@@ -40,69 +40,8 @@ jobs:
           xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UnitTests -only-test-configuration Default -resultBundlePath ./test-results/destinations/mac.xcresult
           exit 0
 
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls ./test-results/destinations/mac.xcresult
+      - run: mdutil -t ./test-results/destinations/mac.xcresult
+      - run: mdutil -as
 
       - run: sleep 10s
   
