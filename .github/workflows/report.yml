@@ -42,85 +42,69 @@ jobs:
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
       - run: sleep 10s
   
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
+      - run: mdls ./test-results/destinations/mac.xcresult
 
-      - run: sleep 10s
-  
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
-
-      - run: sleep 10s
-  
-      - run: mdls -raw -attr kMDItemContentTypeTree ./test-results/destinations/mac.xcresult
-
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
