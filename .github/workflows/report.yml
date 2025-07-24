@@ -24,6 +24,6 @@ jobs:
     runs-on: macos-15
     steps:
       - run: mdutil -t .
-      - run: mdutil -as
+      - run: mdutil -asv
       - run: mdls .
 
