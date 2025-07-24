@@ -23,7 +23,9 @@ jobs:
   update-reports:
     runs-on: macos-15
     steps:
-      - run: mdutil -t .
-      - run: mdutil -asv
+      - run: mdls .
+      - run: mdimport .
+      - run: mdls .
+      - run: sleep 10s
       - run: mdls .
 
