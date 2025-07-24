@@ -24,8 +24,9 @@ jobs:
     runs-on: macos-15
     steps:
       - run: mdls .
+      - run: mdimport -td3 .
       - run: mdimport .
       - run: mdls .
-      - run: sleep 10s
+      - run: sleep 60s
       - run: mdls .
 
