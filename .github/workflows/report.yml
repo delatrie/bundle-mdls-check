@@ -23,10 +23,14 @@ jobs:
   update-reports:
     runs-on: macos-15
     steps:
-      - run: mdls .
-      - run: mdimport -td3 .
-      - run: mdimport .
-      - run: mdls .
+      - name: Run tests against Mac OS
+        run: |
+          set +e
+          xcodebuild test -scheme XcresultSamples -destination 'name=My Mac,arch=arm64' -testPlan UnitTests -only-test-configuration Default -resultBundlePath ./output.xcresult
+          exit 0
+      - run: mdls ./output.xcresult
+      - run: mdimport -td3 ./output.xcresult
+      - run: mdimport -m -y com.apple.xcode.resultbundle -u ./output.xcresult
       - run: sleep 60s
       - run: mdls .
 
