@@ -32,5 +32,5 @@ jobs:
       - run: mdimport -td3 ./output.xcresult
       - run: mdimport -m -y com.apple.xcode.resultbundle -u ./output.xcresult
       - run: sleep 60s
-      - run: mdls .
+      - run: mdls ./output.xcresult
 
